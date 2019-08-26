@@ -1,14 +1,24 @@
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.list import ListView
+from django import forms
 from django.utils import timezone
 from django.urls import reverse_lazy
+from captcha.fields import CaptchaField
 from .models import Task
 
 
+class CreateModelForm(forms.ModelForm):
+    captcha = CaptchaField()
+
+    class Meta:
+        model = Task
+        fields = '__all__'
+
+
 class TaskCreateView(CreateView):
-    model = Task
-    fields = ['name', 'done', 'priority', 'user']
+    form_class = CreateModelForm
     success_url = reverse_lazy('task_list')
+    template_name = 'task_app/task_form.html'
 
 
 class TaskListView(ListView):
@@ -24,6 +34,6 @@ class TaskListView(ListView):
 
 class TaskUpdateView(UpdateView):
     model = Task
-    fields = ['name', 'done', 'priority']
-    template_name_suffix = '_update_form'
+    form_class = CreateModelForm
+    template_name = 'task_app/task_update_form.html'
     success_url = reverse_lazy('task_list')
