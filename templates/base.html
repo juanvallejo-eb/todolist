@@ -1,0 +1,26 @@
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Todo List{% endblock %}</title>
+</head>
+<body>
+  <main>
+    <nav>
+        <ul class="nav nav-pills">
+            <li class="col md-4 col-xs-offset-11">
+                <a href="{% url 'logout' %}">
+                        <button id="create-btn" class="btn btn-danger" />{% bootstrap_icon "logout" %} Logout</button>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>

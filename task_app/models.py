@@ -8,6 +8,15 @@ class Priority(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def color(self):
+        if self.name == "High":
+            return "label label-danger"
+        elif self.name == "Normal":
+            return "label label-warning"
+        else:
+            return "label label-success"
+
 
 class Task(models.Model):
     name = models.CharField(max_length=40)

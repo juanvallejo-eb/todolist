@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
@@ -22,15 +23,15 @@
                 <td>{{task.user}}</td>
                 <td>{{task.name}}</td>
                 <td>{{task.created}}</td>
-                <td>{{task.priority}}</td>
+                <td><span class="label label-default">{{task.priority}}</span></td>
                 <td>{% bootstrap_icon task.tick %}</td>
                 {% if not task.done %}
                 <td><a href="{% url 'task_complete' pk=task.id %}" />
-                    <button id="done-btn" class="btn btn-success" />{% bootstrap_icon "check" %} Done</button>
+                    <button id="done-btn" class="btn btn-success" />{% bootstrap_icon "check" %} Completed</button>
                 </a></td>
                 {% else %}
                 <td><a href="{% url 'task_complete' pk=task.id %}" />
-                    <button id="undone-btn" class="btn btn-warning" />{% bootstrap_icon "remove" %} Undone</button>
+                    <button id="undone-btn" class="btn btn-warning" />{% bootstrap_icon "remove" %} Unconplete</button>
                 </a></td>
                 {% endif %}
                 <td><a href="{% url 'task_update' pk=task.id %}" />

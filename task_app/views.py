@@ -1,5 +1,9 @@
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+# from django.contrib.auth import LoginView
+
 from django import forms
 from django.urls import reverse_lazy
 from captcha.fields import CaptchaField
@@ -21,7 +25,7 @@ class TaskCreateView(CreateView):
     success_url = reverse_lazy('task_list')
 
 
-class TaskListView(ListView):
+class TaskListView(LoginRequiredMixin, ListView):
 
     model = Task
     paginate_by = 100  # if pagination is desired
