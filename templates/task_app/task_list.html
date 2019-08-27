@@ -1,20 +1,37 @@
-<h1>Tasks</h1>
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
 {% block content %}
-   <table>
-   {% for task in object_list %}
-       <tr>
-           <td>{{task.id}}</td>
-           <td>{{task.user}}</td>
-           <td>{{task.name}}</td>
-           <td>{{task.priority}}</td>
-           <td>{{task.done}}</td>
-           <td><a href="{% url 'task_update' pk=task.id %}" />
-            <button id="update-btn" />Update</button>
-        </a></td>
-       </tr>
-   {% endfor %}
-   </table>
-   <p><a href="{% url 'task_new' %}">
-    <button id="create-btn" />Create</button>
-   </a></p>
+<h1>Tasks</h1>
+    <div>
+        <table class="table table-dark">
+            <tr>
+                    <td>ID</td>
+                    <td>User</td>
+                    <td>Name</td>
+                    <td>Priority</td>
+                    <td>Done</td>
+            </tr>
+        {% for task in object_list %}
+            <tr>
+                <td>{{task.id}}</td>
+                <td>{{task.user}}</td>
+                <td>{{task.name}}</td>
+                <td>{{task.priority}}</td>
+                <td>{{task.done}}</td>
+                <td><a href="{% url 'task_update' pk=task.id %}" />
+                    <button id="update-btn" />Update</button>
+                </a></td>
+                <td><a href="{% url 'task_complete' pk=task.id %}" />
+                    <button id="update-btn" />Complete</button>
+                </a></td>
+            </tr>
+    {% endfor %}
+    </table>
+    <p><a href="{% url 'task_new' %}">
+        <button id="create-btn" />Create</button>
+    </a></p>
+    </div>
 {% endblock %}

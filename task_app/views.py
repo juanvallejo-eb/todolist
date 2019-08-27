@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.urls import reverse_lazy
 from captcha.fields import CaptchaField
 from .models import Task
+from django.shortcuts import redirect
 
 
 class CreateModelForm(forms.ModelForm):
@@ -16,9 +17,9 @@ class CreateModelForm(forms.ModelForm):
 
 
 class TaskCreateView(CreateView):
+    model = Task
     form_class = CreateModelForm
     success_url = reverse_lazy('task_list')
-    template_name = 'task_app/task_form.html'
 
 
 class TaskListView(ListView):
@@ -35,5 +36,12 @@ class TaskListView(ListView):
 class TaskUpdateView(UpdateView):
     model = Task
     form_class = CreateModelForm
-    template_name = 'task_app/task_update_form.html'
+    template_name_suffix = '_update_form'
     success_url = reverse_lazy('task_list')
+
+
+def complete_task(request, pk):
+    task = Task.objects.get(pk=pk)
+    task.done = True if not task.done else False
+    task.save()
+    return redirect('task_list')
