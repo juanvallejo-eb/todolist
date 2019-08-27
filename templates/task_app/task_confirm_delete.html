@@ -1,0 +1,18 @@
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+<div class="container m-2">
+    <form method="post">{% csrf_token %}
+        <h2>Are you sure you want to delete "{{ object }}"?</h2>
+        {% buttons %}
+        <button type="submit" class="btn btn-danger">
+            {% bootstrap_icon "ok" %} Confirm
+        </button>
+        <a href="{% url 'task_list' %}" class="btn btn-primary">
+            {% bootstrap_icon "remove" %}Cancel
+        </a>
+        {% endbuttons %}
+    </form>
+</div>
+

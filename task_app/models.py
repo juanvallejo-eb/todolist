@@ -22,3 +22,7 @@ class Task(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def tick(self):
+        return 'ok' if self.done else 'remove'

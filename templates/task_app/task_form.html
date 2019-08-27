@@ -4,12 +4,18 @@
 {% bootstrap_messages %}
 
 <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
-    <h1>Task Creation</h1>
+    <h1>
+    {% if not object.id %}
+        NEW
+    {% else %}
+        UPDATE
+    {% endif %}
+    </h1>
     <form method="post">{% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
         <button type="submit" class="btn btn-primary">
-        {% bootstrap_icon "save" %} Create
+        {% bootstrap_icon "save" %} Save
         </button>
         {% endbuttons %}
     </form>

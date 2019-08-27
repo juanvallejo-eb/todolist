@@ -4,34 +4,46 @@
 {% bootstrap_messages %}
 
 {% block content %}
-<h1>Tasks</h1>
-    <div>
+
+<div class="container">
+    <h1>Tasks</h1>
         <table class="table table-dark">
             <tr>
                     <td>ID</td>
                     <td>User</td>
                     <td>Name</td>
+                    <td>Creation time</td>
                     <td>Priority</td>
                     <td>Done</td>
             </tr>
-        {% for task in object_list %}
+            {% for task in object_list %}
             <tr>
                 <td>{{task.id}}</td>
                 <td>{{task.user}}</td>
                 <td>{{task.name}}</td>
+                <td>{{task.created}}</td>
                 <td>{{task.priority}}</td>
-                <td>{{task.done}}</td>
-                <td><a href="{% url 'task_update' pk=task.id %}" />
-                    <button id="update-btn" />Update</button>
-                </a></td>
+                <td>{% bootstrap_icon task.tick %}</td>
+                {% if not task.done %}
                 <td><a href="{% url 'task_complete' pk=task.id %}" />
-                    <button id="update-btn" />Complete</button>
+                    <button id="done-btn" class="btn btn-success" />{% bootstrap_icon "check" %} Done</button>
+                </a></td>
+                {% else %}
+                <td><a href="{% url 'task_complete' pk=task.id %}" />
+                    <button id="undone-btn" class="btn btn-warning" />{% bootstrap_icon "remove" %} Undone</button>
+                </a></td>
+                {% endif %}
+                <td><a href="{% url 'task_update' pk=task.id %}" />
+                    <button id="update-btn" class="btn btn-primary" />{% bootstrap_icon "pencil" %} Update</button>
+                </a></td>
+                <td><a href="{% url 'task_delete' pk=task.id %}" />
+                    <button id="delete-btn" class="btn btn-danger" />{% bootstrap_icon 'trash' %} Delete</button>
                 </a></td>
             </tr>
-    {% endfor %}
-    </table>
+        {% endfor %}
+        </table>
     <p><a href="{% url 'task_new' %}">
-        <button id="create-btn" />Create</button>
+        <button id="create-btn" class="btn btn-primary" />{% bootstrap_icon "save" %} Create</button>
     </a></p>
-    </div>
+</div>
 {% endblock %}
