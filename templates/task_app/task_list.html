@@ -23,7 +23,7 @@
                 <td>{{task.user}}</td>
                 <td>{{task.name}}</td>
                 <td>{{task.created}}</td>
-                <td><span class="label label-default">{{task.priority}}</span></td>
+                <td><span class="{{task.priority.color}}">{{task.priority}}</span></td>
                 <td>{% bootstrap_icon task.tick %}</td>
                 {% if not task.done %}
                 <td><a href="{% url 'task_complete' pk=task.id %}" />
@@ -44,7 +44,7 @@
         {% endfor %}
         </table>
     <p><a href="{% url 'task_new' %}">
-        <button id="create-btn" class="btn btn-primary" />{% bootstrap_icon "save" %} Create</button>
+        <button id="create-btn" class="btn btn-primary" />{% bootstrap_icon "apple" %} Create</button>
     </a></p>
 </div>
 {% endblock %}

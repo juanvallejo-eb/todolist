@@ -19,7 +19,7 @@ class CreateModelForm(forms.ModelForm):
         fields = '__all__'
 
 
-class TaskCreateView(CreateView):
+class TaskCreateView(LoginRequiredMixin, CreateView):
     model = Task
     form_class = CreateModelForm
     success_url = reverse_lazy('task_list')
@@ -34,7 +34,7 @@ class TaskListView(LoginRequiredMixin, ListView):
         return Task.objects.filter(user=self.request.user)
 
 
-class TaskUpdateView(UpdateView):
+class TaskUpdateView(LoginRequiredMixin, UpdateView):
     model = Task
     form_class = CreateModelForm
     # template_name_suffix = '_update_form'
@@ -48,6 +48,6 @@ def complete_task(request, pk):
     return redirect('task_list')
 
 
-class TaskDeleteView(DeleteView):
+class TaskDeleteView(LoginRequiredMixin, DeleteView):
     model = Task
     success_url = reverse_lazy('task_list')
