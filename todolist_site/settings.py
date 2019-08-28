@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'captcha',
     'bootstrap3',
     'social_django',
+    'pure_pagination',
 ]
 
 MIDDLEWARE = [
@@ -141,6 +142,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 4,
+    'MARGIN_PAGES_DISPLAYED': 2,
+
+    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
+}
 
 LOGIN_REDIRECT_URL = '/tasks'
 LOGOUT_REDIRECT_URL = '/accounts/login'

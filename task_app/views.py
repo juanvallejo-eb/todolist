@@ -2,7 +2,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-# from django.contrib.auth import LoginView
+from pure_pagination.mixins import PaginationMixin
 
 from django import forms
 from django.urls import reverse_lazy
@@ -25,10 +25,10 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('task_list')
 
 
-class TaskListView(LoginRequiredMixin, ListView):
+class TaskListView(LoginRequiredMixin, PaginationMixin, ListView):
 
+    paginate_by = 6  # if pagination is desired
     model = Task
-    paginate_by = 100  # if pagination is desired
 
     def get_queryset(self):
         return Task.objects.filter(user=self.request.user)

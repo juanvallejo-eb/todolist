@@ -43,6 +43,7 @@
             </tr>
         {% endfor %}
         </table>
+        {% include "_pagination.html" %}
     <p><a href="{% url 'task_new' %}">
         <button id="create-btn" class="btn btn-primary" />{% bootstrap_icon "apple" %} Create</button>
     </a></p>
