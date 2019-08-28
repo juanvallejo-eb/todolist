@@ -26,26 +26,28 @@
                 <td><span class="{{task.priority.color}}">{{task.priority}}</span></td>
                 <td>{% bootstrap_icon task.tick %}</td>
                 {% if not task.done %}
-                <td><a href="{% url 'task_complete' pk=task.id %}" />
+                <td><a href="{% url 'task_complete' pk_event=event_id pk=task.id %}" />
                     <button id="done-btn" class="btn btn-success" />{% bootstrap_icon "check" %} Completed</button>
                 </a></td>
                 {% else %}
-                <td><a href="{% url 'task_complete' pk=task.id %}" />
+                <td><a href="{% url 'task_complete' pk_event=event_id pk=task.id %}" />
                     <button id="undone-btn" class="btn btn-warning" />{% bootstrap_icon "remove" %} Unconplete</button>
                 </a></td>
                 {% endif %}
-                <td><a href="{% url 'task_update' pk=task.id %}" />
+                <td><a href="{% url 'task_update' pk_event=event_id pk=task.id %}" />
                     <button id="update-btn" class="btn btn-primary" />{% bootstrap_icon "pencil" %} Update</button>
                 </a></td>
-                <td><a href="{% url 'task_delete' pk=task.id %}" />
+                <td><a href="{% url 'task_delete' pk_event=event_id pk=task.id %}" />
                     <button id="delete-btn" class="btn btn-danger" />{% bootstrap_icon 'trash' %} Delete</button>
                 </a></td>
             </tr>
         {% endfor %}
         </table>
         {% include "_pagination.html" %}
-    <p><a href="{% url 'task_new' %}">
-        <button id="create-btn" class="btn btn-primary" />{% bootstrap_icon "apple" %} Create</button>
-    </a></p>
+        <p>
+            <a href="{% url 'task_new' pk=event_id %}">
+                <button id="create-btn" class="btn btn-primary" />{% bootstrap_icon "apple" %} Create</button>
+            </a>
+        </p>
 </div>
 {% endblock %}

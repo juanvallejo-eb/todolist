@@ -13,7 +13,7 @@
         <button type="submit" class="btn btn-danger">
             {% bootstrap_icon "ok" %} Confirm
         </button>
-        <a href="{% url 'task_list' %}" class="btn btn-primary">
+        <a href="{% url 'task_list' pk=event_id %}" class="btn btn-primary">
             {% bootstrap_icon "remove" %}Cancel
         </a>
         {% endbuttons %}
