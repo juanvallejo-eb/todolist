@@ -6,6 +6,7 @@ from django.views.generic.list import ListView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from pure_pagination.mixins import PaginationMixin
+from pure_pagination.paginator import Paginator, Page
 
 from django import forms
 from django.urls import reverse_lazy
@@ -90,28 +91,57 @@ def complete_task(request, pk_event, pk):
     return redirect(success_url)
 
 
-def get_user_events(user, page, page_size):
-    token = user.access_token
-    url = 'https://www.eventbriteapi.com/v3/users/me/events/'
-    page = 1
-    headers = {
-        'Authorization': 'Bearer '+token
-    }
-    params = {
-        'page': page,
-        'page_size': page_size
-    }
-    response = requests.get(url, headers=headers, params=params).json()['events']
-    return response
+class ApiQuerySet:
+    def __init__(self, api_result):
+        self.api_result = api_result
+        self.index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index >= len(self.api_result['events']):
+            raise StopIteration
+        next_value = self.api_result['events'][self.index]
+        self.index += 1
+        return next_value
+
+    def count(self):
+        return self.api_result['pagination']['object_count']
+
+
+class ApiPaginator(Paginator):
+    def page(self, number):
+        "Returns a Page object for the given 1-based page number."
+        number = self.validate_number(number)
+        bottom = (number - 1) * self.per_page
+        top = bottom + self.per_page
+        if top + self.orphans >= self.count:
+            top = self.count
+        return Page(self.object_list, number, self)
 
 
 class EventsView(PaginationMixin, ListView):
     template_name = 'task_app/events_list.html'
     paginate_by = 5
-    context_object_name = 'event_list'
+    paginator_class = ApiPaginator
+    # context_object_name = 'event_list'
+
+    def get_user_events(self, user):
+        token = user.access_token
+        url = 'https://www.eventbriteapi.com/v3/users/me/events/'
+        page = self.request.GET['page'] if 'page' in self.request.GET else 1
+        page_size = self.paginate_by
+        headers = {
+            'Authorization': 'Bearer '+token
+        }
+        params = {
+            'page': page,
+            'page_size': page_size
+        }
+        response = requests.get(url, headers=headers, params=params).json()
+        return response
 
     def get_queryset(self):
-        page_size = 5
-        page = 1
-        event_list = get_user_events(self.request.user.social_auth.all()[0], page, page_size)
-        return event_list
+        api_result = self.get_user_events(self.request.user.social_auth.all()[0])
+        return ApiQuerySet(api_result)
