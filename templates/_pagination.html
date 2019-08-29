@@ -3,24 +3,36 @@
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 {% bootstrap_messages %}
-<div class="pagination">
+<ul class="pagination">
     {% if page_obj.has_previous %}
+    <li>
         <a href="?{{ page_obj.previous_page_number.querystring }}" class="page-item active">&lsaquo;&lsaquo; {% trans "previous" %}</a>
-    {% else %}
-        <span class="page-item disabled">&lsaquo;&lsaquo; {% trans "previous" %}</span>
+    </li>
+        {% else %}
+    <li class="page-item disabled">
+        <span>&lsaquo;&lsaquo; {% trans "previous" %}</span>
+    </li>
     {% endif %}
     {% for page in page_obj.pages %}
         {% if page %}
             {% ifequal page page_obj.number %}
+            <li class="page-item active">
                 <span class="page-item active">{{ page }}</span>
+            </li>
             {% else %}
+            <li>
                 <a href="?{{ page.querystring }}" class="page-item">{{ page }}</a>
+            </li>
             {% endifequal %}
         {% endif %}
     {% endfor %}
     {% if page_obj.has_next %}
-        <a href="?{{ page_obj.next_page_number.querystring }}" class="page-item active">{% trans "next" %} &rsaquo;&rsaquo;</a>
-    {% else %}
-        <span class="page-item disabled">{% trans "next" %} &rsaquo;&rsaquo;</span>
-    {% endif %}
-</div>
+    <li>
+        <a href="?{{ page_obj.next_page_number.querystring }}">{% trans "next" %} &rsaquo;&rsaquo;</a>
+    </li>
+        {% else %}
+    <li class="page-item disabled">
+        <span>{% trans "next" %} &rsaquo;&rsaquo;</span>
+    </li>
+        {% endif %}
+</ul>

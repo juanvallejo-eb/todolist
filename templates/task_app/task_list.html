@@ -43,14 +43,16 @@
             </tr>
         {% endfor %}
         </table>
-        {% include "_pagination.html" %}
-        <p>
+        <div class='text-center'>
+            {% include "_pagination.html" %}
+        </div>
+        <div style='display:flex; justify-content: space-between'>
             <a href="{% url 'task_new' pk=event_id %}">
-                <button id="create-btn" class="btn btn-primary" />{% bootstrap_icon "apple" %} Create</button>
+                    <button id="create-btn" class="btn btn-primary" />{% bootstrap_icon "star" %} Create new</button>
             </a>
-            <a href="{% url 'events_list'%}" class='md-4'>
-                <button id="back-btn" class="btn btn-primary" />{% bootstrap_icon "Home" %} Exit</button>
+            <a href="{% url 'events_list'%}" class='text-right'>
+                <button id="back-btn" class="btn btn-primary" />{% bootstrap_icon "Home" %} Go Back</button>
             </a>
-        </p>
+        </div>
 </div>
 {% endblock %}
