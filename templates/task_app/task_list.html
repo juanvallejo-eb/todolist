@@ -48,6 +48,9 @@
             <a href="{% url 'task_new' pk=event_id %}">
                 <button id="create-btn" class="btn btn-primary" />{% bootstrap_icon "apple" %} Create</button>
             </a>
+            <a href="{% url 'events_list'%}" class='md-4'>
+                <button id="back-btn" class="btn btn-primary" />{% bootstrap_icon "Home" %} Exit</button>
+            </a>
         </p>
 </div>
 {% endblock %}

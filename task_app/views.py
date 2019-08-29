@@ -1,8 +1,8 @@
 import requests
-import json
+# import json
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
-from django.views.generic import TemplateView
+# from django.views.generic import TemplateView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from pure_pagination.mixins import PaginationMixin
@@ -19,7 +19,7 @@ class CreateTaskForm(forms.ModelForm):
 
     class Meta:
         model = Task
-        fields = '__all__'
+        exclude = ('user', 'event_id')
 
 
 class TaskCreateView(LoginRequiredMixin, CreateView):
@@ -31,6 +31,12 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
             'task_list',
             kwargs={'pk': self.kwargs['pk']}
         )
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.instance.event_id = self.kwargs['pk']
+        self.object = form.save()
+        return super().form_valid(form)
 
 
 class TaskListView(LoginRequiredMixin, PaginationMixin, ListView):
@@ -84,26 +90,28 @@ def complete_task(request, pk_event, pk):
     return redirect(success_url)
 
 
-def get_user_events(user, page):
+def get_user_events(user, page, page_size):
     token = user.access_token
     url = 'https://www.eventbriteapi.com/v3/users/me/events/'
+    page = 1
     headers = {
         'Authorization': 'Bearer '+token
     }
     params = {
-        'page': page
+        'page': page,
+        'page_size': page_size
     }
     response = requests.get(url, headers=headers, params=params).json()['events']
     return response
 
 
-class EventsView(PaginationMixin, TemplateView):
+class EventsView(PaginationMixin, ListView):
     template_name = 'task_app/events_list.html'
     paginate_by = 5
+    context_object_name = 'event_list'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+    def get_queryset(self):
+        page_size = 5
         page = 1
-        event_list = get_user_events(self.request.user.social_auth.all()[0], page)
-        context['events'] = event_list
-        return context
+        event_list = get_user_events(self.request.user.social_auth.all()[0], page, page_size)
+        return event_list
