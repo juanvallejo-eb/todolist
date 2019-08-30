@@ -1,5 +1,7 @@
+migrations
 db.sqlite3
 venv
 .venv
 __pychache__
 *.pyc
+.vscode
