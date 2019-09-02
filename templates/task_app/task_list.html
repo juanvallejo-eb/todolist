@@ -23,8 +23,20 @@
                 <td>{{task.user}}</td>
                 <td>{{task.name}}</td>
                 <td>{{task.created}}</td>
-                <td><span class="{{task.priority.color}}">{{task.priority}}</span></td>
-                <td>{% bootstrap_icon task.tick %}</td>
+                {% if task.priority.name == 'High' %}
+                <td><span class="btn btn-danger">{{task.priority}}</span></td>
+                {% elif task.priority.name == 'Normal' %}
+                <td><span class="btn btn-warning">{{task.priority}}</span></td>
+                {% else %}
+                <td><span class="btn btn-success">{{task.priority}}</span></td>
+                {% endif %}
+
+                {% if task.done %}
+                    <td>{% bootstrap_icon "ok" %}</td>
+                {% else %}
+                    <td>{% bootstrap_icon "remove" %}</td>
+                {% endif %}
+
                 {% if not task.done %}
                 <td><a href="{% url 'task_complete' pk_event=event_id pk=task.id %}" />
                     <button id="done-btn" class="btn btn-success" />{% bootstrap_icon "check" %} Completed</button>

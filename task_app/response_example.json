@@ -1,0 +1,374 @@
+{
+    "pagination": {
+        "object_count": 60, 
+        "page_number": 1, 
+        "page_size": 5, 
+        "page_count": 12, 
+        "continuation": "eyJwYWdlIjogMn0", 
+        "has_more_items": true
+    }, 
+    "events": [
+        {
+            "name": {
+                "text": "Recital EDA 3.0", 
+                "html": "Recital EDA 3.0"
+            }, 
+            "description": {
+                "text": "Evento musical creado por los participantes del EDA 3.0", 
+                "html": "Evento musical creado por los participantes del EDA 3.0"
+            }, 
+            "id": "68265194033", 
+            "url": "https://www.eventbrite.com/e/recital-eda-30-tickets-68265194033", 
+            "start": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-08-07T14:00:00", 
+                "utc": "2019-08-07T17:00:00Z"
+            }, 
+            "end": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-08-07T16:00:00", 
+                "utc": "2019-08-07T19:00:00Z"
+            }, 
+            "organization_id": "323344184563", 
+            "created": "2019-08-07T12:43:51Z", 
+            "changed": "2019-08-07T23:31:55Z", 
+            "published": "2019-08-07T12:56:37Z", 
+            "capacity": 26, 
+            "capacity_is_custom": false, 
+            "status": "completed", 
+            "currency": "ARS", 
+            "listed": false, 
+            "shareable": false, 
+            "invite_only": false, 
+            "online_event": false, 
+            "show_remaining": false, 
+            "tx_time_limit": 480, 
+            "hide_start_date": true, 
+            "hide_end_date": true, 
+            "locale": "en_US", 
+            "is_locked": false, 
+            "privacy_setting": "unlocked", 
+            "is_series": false, 
+            "is_series_parent": false, 
+            "inventory_type": "limited", 
+            "is_reserved_seating": false, 
+            "show_pick_a_seat": false, 
+            "show_seatmap_thumbnail": false, 
+            "show_colors_in_seatmap_thumbnail": false, 
+            "source": "coyote", 
+            "is_free": false, 
+            "version": "3.7.0", 
+            "summary": "Evento musical creado por los participantes del EDA 3.0", 
+            "logo_id": "67843309", 
+            "organizer_id": "26147011785", 
+            "venue_id": "35686061", 
+            "category_id": "103", 
+            "subcategory_id": null, 
+            "format_id": "19", 
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/68265194033/", 
+            "is_externally_ticketed": false, 
+            "logo": {
+                "crop_mask": {
+                    "top_left": {
+                        "x": 1, 
+                        "y": 102
+                    }, 
+                    "width": 400, 
+                    "height": 200
+                }, 
+                "original": {
+                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F67843309%2F323344184563%2F1%2Foriginal.20190807-124927?auto=compress&s=63fdf621532d48aba44da3eff84fd2f2", 
+                    "width": 401, 
+                    "height": 401
+                }, 
+                "id": "67843309", 
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F67843309%2F323344184563%2F1%2Foriginal.20190807-124927?h=200&w=450&auto=compress&rect=1%2C102%2C400%2C200&s=f8bbe10b7f9adc8488538fdfb5fd1801", 
+                "aspect_ratio": "2", 
+                "edge_color": null, 
+                "edge_color_set": true
+            }
+        }, 
+        {
+            "name": {
+                "text": "Actividad Evento con duraci\u00f3n de m\u00e1s de un d\u00eda.", 
+                "html": "Actividad Evento con duraci\u00f3n de m\u00e1s de un d\u00eda."
+            }, 
+            "description": {
+                "text": "Curso presencial  que se realiza  todos los martes y jueves del 1 al 29 de septiembre de 17.00 a 19.00h.", 
+                "html": "Curso presencial  que se realiza  todos los martes y jueves del 1 al 29 de septiembre de 17.00 a 19.00h."
+            }, 
+            "id": "68610847893", 
+            "url": "https://www.eventbrite.com/e/actividad-evento-con-duracion-de-mas-de-un-dia-tickets-68610847893", 
+            "start": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-01T17:00:00", 
+                "utc": "2019-09-01T20:00:00Z"
+            }, 
+            "end": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-29T20:00:00", 
+                "utc": "2019-09-29T23:00:00Z"
+            }, 
+            "organization_id": "323344184563", 
+            "created": "2019-08-09T14:37:23Z", 
+            "changed": "2019-09-01T20:00:42Z", 
+            "published": "2019-08-09T14:38:45Z", 
+            "capacity": 10, 
+            "capacity_is_custom": false, 
+            "status": "started", 
+            "currency": "ARS", 
+            "listed": false, 
+            "shareable": false, 
+            "invite_only": false, 
+            "online_event": false, 
+            "show_remaining": false, 
+            "tx_time_limit": 480, 
+            "hide_start_date": false, 
+            "hide_end_date": true, 
+            "locale": "en_US", 
+            "is_locked": false, 
+            "privacy_setting": "unlocked", 
+            "is_series": false, 
+            "is_series_parent": false, 
+            "inventory_type": "limited", 
+            "is_reserved_seating": false, 
+            "show_pick_a_seat": false, 
+            "show_seatmap_thumbnail": false, 
+            "show_colors_in_seatmap_thumbnail": false, 
+            "source": "coyote", 
+            "is_free": false, 
+            "version": "3.7.0", 
+            "summary": "Curso presencial  que se realiza  todos los martes y jueves del 1 al 29 de septiembre de 17.00 a 19.00h.", 
+            "logo_id": null, 
+            "organizer_id": "26147011785", 
+            "venue_id": "35863801", 
+            "category_id": "199", 
+            "subcategory_id": null, 
+            "format_id": "100", 
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/68610847893/", 
+            "is_externally_ticketed": false, 
+            "logo": null
+        }, 
+        {
+            "name": {
+                "text": "Actividad Mapa de asientos", 
+                "html": "Actividad Mapa de asientos"
+            }, 
+            "description": {
+                "text": "Perros que vuelan, macbooks que chocan.", 
+                "html": "Perros que vuelan, macbooks que chocan."
+            }, 
+            "id": "68299388309", 
+            "url": "https://www.eventbrite.com/e/actividad-mapa-de-asientos-tickets-68299388309", 
+            "start": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-04T19:00:00", 
+                "utc": "2019-09-04T22:00:00Z"
+            }, 
+            "end": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-04T22:00:00", 
+                "utc": "2019-09-05T01:00:00Z"
+            }, 
+            "organization_id": "323344184563", 
+            "created": "2019-08-07T17:52:25Z", 
+            "changed": "2019-08-09T12:53:18Z", 
+            "published": "2019-08-07T18:13:15Z", 
+            "capacity": 200, 
+            "capacity_is_custom": false, 
+            "status": "live", 
+            "currency": "ARS", 
+            "listed": false, 
+            "shareable": false, 
+            "invite_only": false, 
+            "online_event": false, 
+            "show_remaining": false, 
+            "tx_time_limit": 480, 
+            "hide_start_date": false, 
+            "hide_end_date": false, 
+            "locale": "en_US", 
+            "is_locked": false, 
+            "privacy_setting": "unlocked", 
+            "is_series": false, 
+            "is_series_parent": false, 
+            "inventory_type": "reserved", 
+            "is_reserved_seating": true, 
+            "show_pick_a_seat": true, 
+            "show_seatmap_thumbnail": true, 
+            "show_colors_in_seatmap_thumbnail": true, 
+            "source": "coyote", 
+            "is_free": false, 
+            "version": "3.7.0", 
+            "summary": "Perros que vuelan, macbooks que chocan.", 
+            "logo_id": "67985517", 
+            "organizer_id": "26147011785", 
+            "venue_id": "35713351", 
+            "category_id": "113", 
+            "subcategory_id": null, 
+            "format_id": "17", 
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/68299388309/", 
+            "is_externally_ticketed": false, 
+            "logo": {
+                "crop_mask": {
+                    "top_left": {
+                        "x": 168, 
+                        "y": 99
+                    }, 
+                    "width": 930, 
+                    "height": 465
+                }, 
+                "original": {
+                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F67985517%2F323344184563%2F1%2Foriginal.20190808-125912?auto=compress&s=d7b49b4f6c8a7eeafb36582c5b17d873", 
+                    "width": 1217, 
+                    "height": 677
+                }, 
+                "id": "67985517", 
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F67985517%2F323344184563%2F1%2Foriginal.20190808-125912?h=200&w=450&auto=compress&rect=168%2C99%2C930%2C465&s=d08b3a890ad649d99e3b294b09ef8194", 
+                "aspect_ratio": "2", 
+                "edge_color": "#320d5d", 
+                "edge_color_set": true
+            }
+        }, 
+        {
+            "name": {
+                "text": "Repetido Yoga", 
+                "html": "Repetido Yoga"
+            }, 
+            "description": {
+                "text": "Mi instituto de yoga invit\u00f3 a un maestro especial para participar en la clase durante 6 d\u00edas. Est\u00e1n ofreciendo una clase cada noche de 19.00 a 20.00hs de lunes a s\u00e1bado.", 
+                "html": "<P><SPAN>Mi instituto de yoga invit\u00f3 a un maestro especial para participar en la clase durante 6 d\u00edas. Est\u00e1n ofreciendo una clase cada noche de 19.00 a 20.00hs de lunes a s\u00e1bado.<\/SPAN><\/P>"
+            }, 
+            "id": "68605909121", 
+            "url": "https://www.eventbrite.com/e/repetido-yoga-tickets-68605909121", 
+            "start": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-16T19:00:00", 
+                "utc": "2019-09-16T22:00:00Z"
+            }, 
+            "end": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-16T20:00:00", 
+                "utc": "2019-09-16T23:00:00Z"
+            }, 
+            "organization_id": "323344184563", 
+            "created": "2019-08-09T13:59:50Z", 
+            "changed": "2019-08-09T14:00:24Z", 
+            "capacity": 10, 
+            "capacity_is_custom": false, 
+            "status": "draft", 
+            "currency": "ARS", 
+            "listed": false, 
+            "shareable": true, 
+            "invite_only": false, 
+            "online_event": false, 
+            "show_remaining": false, 
+            "tx_time_limit": 480, 
+            "hide_start_date": false, 
+            "hide_end_date": false, 
+            "locale": "en_US", 
+            "is_locked": false, 
+            "privacy_setting": "unlocked", 
+            "is_series": true, 
+            "is_series_parent": false, 
+            "inventory_type": "limited", 
+            "is_reserved_seating": false, 
+            "show_pick_a_seat": false, 
+            "show_seatmap_thumbnail": false, 
+            "show_colors_in_seatmap_thumbnail": false, 
+            "source": "create_2.0", 
+            "is_free": false, 
+            "version": "3.0.0", 
+            "summary": "Mi instituto de yoga invit\u00f3 a un maestro especial para participar en la clase durante 6 d\u00edas. Est\u00e1n ofreciendo una clase cada noche de 19.00", 
+            "logo_id": null, 
+            "organizer_id": "26147011785", 
+            "venue_id": "35858635", 
+            "category_id": null, 
+            "subcategory_id": null, 
+            "format_id": null, 
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/68605909121/", 
+            "is_externally_ticketed": false, 
+            "series_id": "68605907115", 
+            "logo": null
+        }, 
+        {
+            "name": {
+                "text": "Actividad: Formulario de Pedido", 
+                "html": "Actividad: Formulario de Pedido"
+            }, 
+            "description": {
+                "text": "Segundo Evento EDA", 
+                "html": "Segundo Evento EDA"
+            }, 
+            "id": "68266618293", 
+            "url": "https://www.eventbrite.com/e/actividad-formulario-de-pedido-tickets-68266618293", 
+            "start": {
+                "timezone": "America/New_York", 
+                "local": "2019-09-16T19:00:00", 
+                "utc": "2019-09-16T23:00:00Z"
+            }, 
+            "end": {
+                "timezone": "America/New_York", 
+                "local": "2019-09-16T22:00:00", 
+                "utc": "2019-09-17T02:00:00Z"
+            }, 
+            "organization_id": "323344184563", 
+            "created": "2019-08-07T13:00:40Z", 
+            "changed": "2019-08-08T12:26:35Z", 
+            "published": "2019-08-07T13:07:00Z", 
+            "capacity": 45, 
+            "capacity_is_custom": false, 
+            "status": "live", 
+            "currency": "ARS", 
+            "listed": false, 
+            "shareable": false, 
+            "invite_only": false, 
+            "online_event": true, 
+            "show_remaining": false, 
+            "tx_time_limit": 480, 
+            "hide_start_date": false, 
+            "hide_end_date": false, 
+            "locale": "en_US", 
+            "is_locked": false, 
+            "privacy_setting": "unlocked", 
+            "is_series": false, 
+            "is_series_parent": false, 
+            "inventory_type": "limited", 
+            "is_reserved_seating": false, 
+            "show_pick_a_seat": false, 
+            "show_seatmap_thumbnail": false, 
+            "show_colors_in_seatmap_thumbnail": false, 
+            "source": "coyote", 
+            "is_free": false, 
+            "version": "3.7.0", 
+            "summary": "Segundo Evento EDA", 
+            "logo_id": "67844487", 
+            "organizer_id": "26147011785", 
+            "venue_id": null, 
+            "category_id": "101", 
+            "subcategory_id": null, 
+            "format_id": "10", 
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/68266618293/", 
+            "is_externally_ticketed": false, 
+            "logo": {
+                "crop_mask": {
+                    "top_left": {
+                        "x": 0, 
+                        "y": 100
+                    }, 
+                    "width": 400, 
+                    "height": 200
+                }, 
+                "original": {
+                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F67844487%2F323344184563%2F1%2Foriginal.20190807-130055?auto=compress&s=2dd4fa5e3c4e12a9daa40d35b65c5129", 
+                    "width": 401, 
+                    "height": 401
+                }, 
+                "id": "67844487", 
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F67844487%2F323344184563%2F1%2Foriginal.20190807-130055?h=200&w=450&auto=compress&rect=0%2C100%2C400%2C200&s=58d525b0b85e5a93f44fb7e8848d4f80", 
+                "aspect_ratio": "2", 
+                "edge_color": null, 
+                "edge_color_set": true
+            }
+        }
+    ]
+}

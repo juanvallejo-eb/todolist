@@ -1,8 +1,7 @@
 import requests
-# import json
+
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
-# from django.views.generic import TemplateView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from pure_pagination.mixins import PaginationMixin
@@ -13,6 +12,8 @@ from django.urls import reverse_lazy
 from captcha.fields import CaptchaField
 from .models import Task
 from django.shortcuts import redirect
+
+from . import EVENTBRITEAPI
 
 
 class CreateTaskForm(forms.ModelForm):
@@ -121,15 +122,14 @@ class ApiPaginator(Paginator):
         return Page(self.object_list, number, self)
 
 
-class EventsView(PaginationMixin, ListView):
+class EventsView(LoginRequiredMixin, PaginationMixin, ListView):
     template_name = 'task_app/events_list.html'
     paginate_by = 5
     paginator_class = ApiPaginator
-    # context_object_name = 'event_list'
 
     def get_user_events(self, user):
-        token = user.access_token
-        url = 'https://www.eventbriteapi.com/v3/users/me/events/'
+        token = user.social_auth.all()[0].access_token
+        url = EVENTBRITEAPI
         page = self.request.GET['page'] if 'page' in self.request.GET else 1
         page_size = self.paginate_by
         headers = {
@@ -143,5 +143,5 @@ class EventsView(PaginationMixin, ListView):
         return response
 
     def get_queryset(self):
-        api_result = self.get_user_events(self.request.user.social_auth.all()[0])
+        api_result = self.get_user_events(self.request.user)
         return ApiQuerySet(api_result)
