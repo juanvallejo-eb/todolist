@@ -23,6 +23,6 @@ urlpatterns = [
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^captcha/', include('captcha.urls')),
-    url('', RedirectView.as_view(url='/events/')),
+    # url('', RedirectView.as_view(url='/events/')),
     url('', include('social_django.urls', namespace='social'))
 ]
