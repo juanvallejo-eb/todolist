@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn post_registration.wsgi --log-file -
+web: gunicorn todolist_site.wsgi --log-file -
