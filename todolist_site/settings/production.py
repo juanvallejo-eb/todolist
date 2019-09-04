@@ -7,18 +7,17 @@ DEBUG = False
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_name',
-        'USER': 'db_user',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'todo list',
+        'USER': 'name',
         'PASSWORD': '',
-        'HOST': '',
-        'PORT': 'db_port_number',
+        'PORT': '',
     }
 }
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+
+DB_FROM_ENV = dj_database_url.config(conn_max_age=500)
+
+DATABASES['default'].update(DB_FROM_ENV)
 
 
 SOCIAL_AUTH_EVENTBRITE_KEY = get_env_variable('SOCIAL_AUTH_EVENTBRITE_KEY')
