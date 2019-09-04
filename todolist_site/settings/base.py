@@ -26,7 +26,7 @@ SECRET_KEY = '3ubci)ffg)h85k9g-1ax@e__#a8m(^04iho83#0!qdk+%g2qdo'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ['todo-list-jpv.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
