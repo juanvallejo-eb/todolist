@@ -3,7 +3,7 @@ from . import get_env_variable
 import dj_database_url
 import os
 
-DEBUG = False
+DEBUG = True
 
 DATABASES = {
     'default': {
