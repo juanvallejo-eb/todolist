@@ -5,3 +5,5 @@ venv
 __pychache__
 *.pyc
 .vscode
+.coverage
+.DS_Store
