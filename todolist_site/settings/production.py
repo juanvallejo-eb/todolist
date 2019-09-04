@@ -4,7 +4,16 @@ import dj_database_url
 
 DEBUG = False
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_name',
+        'USER': 'db_user',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': 'db_port_number',
+    }
+}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
