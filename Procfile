@@ -1,1 +1,2 @@
-web: gunicorn mysite.wsgi --log-file -
+release: python manage.py migrate
+web: gunicorn post_registration.wsgi --log-file -
