@@ -1,9 +1,9 @@
 language: python
 python:
-  - "3.6.5"
+  - "3.7.4"
 cache: pip
 env:
-  - DJANGO_VERSION=1.11
+  - DJANGO_VERSION=1.11.24
 # command to install dependencies
 install:
   - pip install -r requirements.txt
