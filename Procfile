@@ -1,2 +1,2 @@
-release: python manage.py migrate --setting=todolist_site.settings.production
+release: python manage.py migrate --run-syncdb
 web: gunicorn todolist_site.wsgi --log-file -
