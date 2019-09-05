@@ -19,7 +19,7 @@ class Task(models.Model):
       settings.AUTH_USER_MODEL,
       on_delete=models.CASCADE
     )
-    event_id = models.IntegerField(null=True)
+    event_id = models.BigIntegerField(null=True)
 
     def __str__(self):
         return self.name
